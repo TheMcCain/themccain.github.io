@@ -1,3 +1,5 @@
+// DRAGGING
+
 console.log("drag script loaded");
 
 const windowEl = document.querySelector(".window");
@@ -28,3 +30,37 @@ document.addEventListener("mouseup", () => {
   isDragging = false;
   document.body.style.userSelect = "";
 });
+
+
+
+
+
+
+
+
+
+
+
+// TABS
+
+<script>
+  const tabs = document.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deselect all tabs
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+
+      // Hide all panels
+      panels.forEach(p => p.classList.remove('active'));
+
+      // Select clicked tab
+      tab.setAttribute('aria-selected', 'true');
+
+      // Show matching panel
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.classList.add('active');
+    });
+  });
+</script>
