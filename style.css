@@ -13,6 +13,16 @@ html, body {
   background-color: #000;
 }
 
+p {
+  text-align: right; 
+}
+body {
+    padding-top: 20px; /* Adjust as needed */
+    margin-top: 0; /* Ensure no default browser margin */
+      padding-bottom: 20px; 
+    margin-bottom: 0;
+}
+
 // Windows 7 window
 
 .window {
