@@ -43,7 +43,6 @@ document.addEventListener("mouseup", () => {
 
 // TABS
 
-<script>
   const tabs = document.querySelectorAll('[role="tab"]');
   const panels = document.querySelectorAll('[role="tabpanel"]');
 
@@ -63,4 +62,3 @@ document.addEventListener("mouseup", () => {
       panel.classList.add('active');
     });
   });
-</script>
