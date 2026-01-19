@@ -6,25 +6,14 @@ body {
   background-attachment: fixed;
 }
 
-.animate div {
-  width: 0;
-  height: 100%;
-  background: #2563eb;
-  animation: grow 2s forwards;
-}
-
-@keyframes grow {
-  to {
-    width: 60%;
-  }
-}
-
 html, body {
   margin: 0;
   color: white;
   font-family: "Segoe UI", system-ui, sans-serif;
   background-color: #000;
 }
+
+// Windows 7 window
 
 .window {
   position: absolute;
@@ -35,5 +24,15 @@ html, body {
 
 .title-bar {
   cursor: move;
+}
+
+// Tabs
+
+[role="tabpanel"] {
+  display: none;
+}
+
+[role="tabpanel"].active {
+  display: block;
 }
 
