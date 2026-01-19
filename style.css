@@ -14,13 +14,17 @@ html, body {
 }
 
 p {
-  text-align: right; 
+  text-align: left; 
 }
 body {
     padding-top: 20px; /* Adjust as needed */
     margin-top: 0; /* Ensure no default browser margin */
-      padding-bottom: 20px; 
+    padding-bottom: 20px; 
     margin-bottom: 0;
+    padding-left: 20px; 
+    margin-left: 0;
+    padding-right: 20px; 
+    margin-right: 0;
 }
 
 // Windows 7 window
