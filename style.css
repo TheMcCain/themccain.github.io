@@ -60,13 +60,15 @@ body {
   display: block;
 }
 
-// Top nav bar
-
-/* Navigation links */
-.topnav a:link, a:visited, a:hover, a:active {
-  color: white; /* Or use the hexadecimal code #FFFFFF */
-  text-decoration: underline;
+a {
+  color: white;
+  transition: color 0.3s ease;
 }
+
+a:hover {
+  color: #cccccc;
+}
+
 
 
 
