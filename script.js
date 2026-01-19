@@ -43,22 +43,25 @@ document.addEventListener("mouseup", () => {
 
 // TABS
 
-  const tabs = document.querySelectorAll('[role="tab"]');
-  const panels = document.querySelectorAll('[role="tabpanel"]');
+const tabs = document.querySelectorAll('[role="tab"]');
+const panels = document.querySelectorAll('[role="tabpanel"]');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Deselect all tabs
-      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
 
-      // Hide all panels
-      panels.forEach(p => p.classList.remove('active'));
-
-      // Select clicked tab
-      tab.setAttribute('aria-selected', 'true');
-
-      // Show matching panel
-      const panel = document.getElementById(tab.getAttribute('aria-controls'));
-      panel.classList.add('active');
+    panels.forEach(p => {
+      p.hidden = true;
     });
+
+    tab.setAttribute('aria-selected', 'true');
+
+    const panel = document.getElementById(
+      tab.getAttribute('aria-controls')
+    );
+
+    if (panel) {
+      panel.hidden = false;
+    }
   });
+});
