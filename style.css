@@ -45,11 +45,11 @@ body {
   cursor: move;
 }
 .window {
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .window-body {
-  max-height: 380px;
+  max-height: 680px;
   overflow-y: auto;
   padding: 8px;
 }
