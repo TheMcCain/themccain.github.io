@@ -46,6 +46,17 @@ document.addEventListener("mouseup", () => {
 const tabs = document.querySelectorAll('[role="tab"]');
 const panels = document.querySelectorAll('[role="tabpanel"]');
 
+// Ensure only the selected tab's panel is visible on load
+panels.forEach(panel => {
+  panel.hidden = true;
+});
+
+const activeTab = document.querySelector('[role="tab"][aria-selected="true"]');
+if (activeTab) {
+  const panel = document.getElementById(activeTab.getAttribute('aria-controls'));
+  if (panel) panel.hidden = false;
+}
+
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
