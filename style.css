@@ -60,6 +60,8 @@ body {
   display: block;
 }
 
+// links
+
 a {
   color: white;
   transition: color 0.3s ease;
@@ -69,6 +71,39 @@ a:hover {
   color: #cccccc;
 }
 
+// tooltips
+
+.tooltip {
+  position: absolute;      /* Make it float above content */
+  bottom: 100%;            /* Position above the trigger */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px); /* Center + slight upward offset */
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  
+  opacity: 0;              /* Start hidden */
+  pointer-events: none;    /* Ignore mouse events when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade + slight move */
+  
+  z-index: 10;
+}
+
+.tooltip-trigger {
+  position: relative;      /* Needed for tooltip positioning */
+  cursor: help;
+  text-decoration: underline
+}
+
+/* Show tooltip on hover */
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Slide slightly down into place */
+  pointer-events: auto;
+}
 
 
 
