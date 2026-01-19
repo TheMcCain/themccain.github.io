@@ -6,27 +6,19 @@ body {
   background-attachment: fixed;
 }
 
-.progress {
-  width: 300px;
-  height: 20px;
-  background-color: #e5e7eb;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #3b82f6;
+.animate div {
   width: 0;
-  animation: fillBar 2s ease-out forwards;
+  height: 100%;
+  background: #2563eb;
+  animation: grow 2s forwards;
 }
 
-@keyframes fillBar {
+@keyframes grow {
   to {
     width: 60%;
   }
 }
 
 body {
-  font-family: Segoe UI;
+  font-family: Inter;
 }
