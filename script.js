@@ -45,7 +45,17 @@ document.addEventListener("mouseup", () => {
 ;
 
 
+// scrollbar
+const observer = new MutationObserver(() => {
+  document.querySelectorAll("*").forEach(el => {
+    if ((el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth) && !el.classList.contains("has-scrollbar")) {
+      el.classList.add("has-scrollbar");
+    }
+  });
+});
 
+// Observe changes in the entire document
+observer.observe(document.body, { childList: true, subtree: true });
 
 
 
