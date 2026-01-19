@@ -32,12 +32,9 @@ body {
 .window {
   display: none; /* hidden initially */
   position: absolute; /* for dragging */
-  top: 100px;
-  left: 100px;
+  top: 50px;
+  left: 50px;
   max-width: 600px;
-  border: 2px solid #333;
-  background: #222;
-  color: white;
 }
 
 
