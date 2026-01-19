@@ -1,3 +1,5 @@
+console.log("drag script loaded");
+
 const windowEl = document.querySelector(".window");
 const titleBar = windowEl.querySelector(".title-bar");
 
