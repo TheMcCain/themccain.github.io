@@ -90,20 +90,7 @@ tabs.forEach(tab => {
   });
 });
 
-// opening & closing
-const openBtn = document.getElementById("openWindowBtn");
-const myWindow = document.querySelector(".window");
 
-openBtn.addEventListener("click", () => {
-  myWindow.style.display = "block"; // shows the window
-});
-
-
-const closeBtn = myWindow.querySelector('[aria-label="Close"]');
-
-closeBtn.addEventListener("click", () => {
-  myWindow.style.display = "none"; // hides the window
-});
 
 // other stuff
 document.title = "REAL MCCAIN PATRIOTS OVER HERE";
