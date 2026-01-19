@@ -1,6 +1,6 @@
 // DRAGGING
 
-console.log("drag script loaded, update v1 working");
+console.log("drag script loaded, update v1.1 working");
 
 const windowEl = document.querySelector(".window");
 const titleBar = windowEl.querySelector(".title-bar");
@@ -8,6 +8,12 @@ const titleBar = windowEl.querySelector(".title-bar");
 let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
+
+// Ensure the window has initial left/top
+const rect = windowEl.getBoundingClientRect();
+windowEl.style.position = "absolute";
+windowEl.style.left = rect.left + "px";
+windowEl.style.top = rect.top + "px";
 
 titleBar.addEventListener("mousedown", (e) => {
   isDragging = true;
@@ -17,19 +23,26 @@ titleBar.addEventListener("mousedown", (e) => {
   offsetY = e.clientY - rect.top;
 
   document.body.style.userSelect = "none";
+  windowEl.style.zIndex = 1000; // bring to front while dragging
 });
 
 document.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
 
-  windowEl.style.left = e.clientX - offsetX + "px";
-  windowEl.style.top = e.clientY - offsetY + "px";
+  // Clamp to viewport (optional, prevents moving off-screen)
+  const newLeft = e.clientX - offsetX;
+  const newTop = e.clientY - offsetY;
+
+  windowEl.style.left = Math.max(0, newLeft) + "px";
+  windowEl.style.top = Math.max(0, newTop) + "px";
 });
 
 document.addEventListener("mouseup", () => {
+  if (!isDragging) return;
   isDragging = false;
   document.body.style.userSelect = "";
 });
+;
 
 
 
