@@ -101,10 +101,16 @@ tabs.forEach(tab => {
 });
 
 
-
 // other stuff
-document.title = "REAL MCCAIN PATRIOTS OVER HERE";
-<link rel="icon" type="image/png" sizes="48x48" href="https://www.rw-designer.com/icon-image/18838-256x256x32.png">
+document.title = "REAL MCCAIN PATRIOTS WEBSITE";
 
+document.querySelectorAll("link[rel*='icon']").forEach(el => el.remove());
+
+const favican = document.createElement("link");
+favican.rel = "icon";
+favican.type = "png";
+favican.href = "https://www.rw-designer.com/icon-image/18838-256x256x32.png";
+
+document.head.appendChild(favican);
 
 
