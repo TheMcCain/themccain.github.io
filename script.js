@@ -45,20 +45,6 @@ document.addEventListener("mouseup", () => {
 ;
 
 
-// scrollbar
-const observer = new MutationObserver(() => {
-  document.querySelectorAll("*").forEach(el => {
-    if ((el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth) && !el.classList.contains("has-scrollbar")) {
-      el.classList.add("has-scrollbar");
-    }
-  });
-});
-
-// Observe changes in the entire document
-observer.observe(document.body, { childList: true, subtree: true });
-
-
-
 
 
 
@@ -105,6 +91,104 @@ tabs.forEach(tab => {
 
 
 // SCROLLBAR
+(function () {
+    const hasPageScrollbar = document.documentElement.scrollHeight > document.documentElement.clientHeight;
+    document.body.classList.toggle('has-scrollbar', hasPageScrollbar);
+}
+)();
+
+function ensureStylesheet(url, id) {
+	if (id && document.getElementById(id)) {
+        if (id === 'unpkg-7css') {
+            const link = document.getElementById(id);
+if (link) link.remove();
+            return; 
+        }
+        return;
+    }
+	if (document.querySelector('link[rel="stylesheet"][href="' + url + '"]')) return;
+const link = document.createElement('link');
+	link.rel = 'stylesheet';
+	link.href = url;
+	if (id) link.id = id;
+	document.head.appendChild(link);
+}
+
+function ensureMetaViewport() {
+    if (!document.querySelector('meta[name="viewport"]')) {
+        const m = document.createElement('meta');
+m.name = 'viewport';
+        m.content = 'width=device-width, initial-scale=1';
+        document.head.appendChild(m);
+    }
+}
+
+applyGlobalStyles.sheets = {};
+function applyGlobalStyles(css, id = 'app-theme') {
+    if ('adoptedStyleSheets' in document && 'replaceSync' in CSSStyleSheet.prototype) {
+        if (!applyGlobalStyles.sheets[id]) {
+            applyGlobalStyles.sheets[id] = new CSSStyleSheet();
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, applyGlobalStyles.sheets[id]];
+        }
+        applyGlobalStyles.sheets[id].replaceSync(css);
+        return;
+}
+
+    let el = document.getElementById(id);
+    if (!el) {
+        el = document.createElement('style');
+el.id = id;
+        document.head.appendChild(el);
+    }
+    el.textContent = css;
+}
+
+
+
+
+
+
+const tooltip = document.createElement("div");
+tooltip.setAttribute("id", "tt");
+tooltip.innerHTML = ``;
+tooltip.style.position = "absolute";
+//tooltip.style.backgroundColor = "#eee";
+//tooltip.style.color = "#000";
+tooltip.style.padding = "8px";
+//tooltip.style.borderRadius = "5px";
+tooltip.style.visibility = "hidden";
+tooltip.style.fontSize = "14px";
+tooltip.style.zIndex = "1000";
+tooltip.style.whiteSpace = "normal";
+tooltip.style.wordWrap = "break-word";
+//tooltip.style.border = "1px solid #444"; // Add thin black border
+//tooltip.style.borderRadius = "5px"; // Optional: rounded corners
+//tooltip.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)"; // Optional: subtle shadow
+tooltip.style.maxWidth = "230px"; // Adjust this to customize the max width.
+tooltip.class = "tooltip is-top is-right"
+tooltip.role = "tooltip"
+
+document.body.appendChild(tooltip);
+
+// Show the tooltip and make it follow the mouse
+
+window.tooltip_on = function(html) {
+    if (tooltip_dict[html] != null) {
+        tooltip.innerHTML = tooltip_dict[html];
+    }
+    tooltip.style.visibility = "visible";
+    document.onmousemove = (event) => {
+        tooltip.style.left = `${event.pageX + 10}px`; // Use this and the line below to
+        tooltip.style.top = `${event.pageY + 10}px`; // adjust the relative position of the tooltip.
+    };
+};
+
+
+window.tooltip_off = function() {
+    tooltip.style.visibility = "hidden";
+    document.onmousemove = null; // Stop tracking the mouse
+};
+
 
 
 
@@ -121,5 +205,8 @@ favican.type = "png";
 favican.href = "https://www.rw-designer.com/icon-image/18838-256x256x32.png";
 
 document.head.appendChild(favican);
+
+
+
 
 
