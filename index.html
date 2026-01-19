@@ -4,7 +4,7 @@
   
 <br>
 
-<h1>THEMCCAIN ALERT: THEY WANT TO SENTENCE ME TO DEATH!!!</h1>
+<h1><u>TheMcCain ALERT: THEY WANT TO SENTENCE ME TO DEATH!!!</h1></u>
   
 <p>I decided to make a website because the TCT mods are <b><strong>CORRUPT.</strong></b></p>
  <p>I really don't think anyone's gonna be here, but if you are, welcome. I've always wanted to make a website so today I just decided to learn how. This was made manually with Github Pages.</p> 
@@ -155,6 +155,34 @@
     </section>
   </div>
 </div>
+
+  <style>
+.window {
+  display: none; /* hidden initially */
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  max-width: 300px;
+  background-color: #222;
+  color: white;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+</style>
+
+<script>
+const openBtn = document.getElementById("openWindowBtn");
+const myWindow = document.querySelector(".window");
+const closeBtn = myWindow.querySelector('[aria-label="Close"]');
+
+openBtn.addEventListener("click", () => {
+  myWindow.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  myWindow.style.display = "none";
+});
+</script>
 
   
 <link rel="stylesheet" href="https://unpkg.com/7.css">
