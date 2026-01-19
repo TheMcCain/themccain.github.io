@@ -148,49 +148,6 @@ el.id = id;
 
 
 
-const tooltip = document.createElement("div");
-tooltip.setAttribute("id", "tt");
-tooltip.innerHTML = ``;
-tooltip.style.position = "absolute";
-//tooltip.style.backgroundColor = "#eee";
-//tooltip.style.color = "#000";
-tooltip.style.padding = "8px";
-//tooltip.style.borderRadius = "5px";
-tooltip.style.visibility = "hidden";
-tooltip.style.fontSize = "14px";
-tooltip.style.zIndex = "1000";
-tooltip.style.whiteSpace = "normal";
-tooltip.style.wordWrap = "break-word";
-//tooltip.style.border = "1px solid #444"; // Add thin black border
-//tooltip.style.borderRadius = "5px"; // Optional: rounded corners
-//tooltip.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)"; // Optional: subtle shadow
-tooltip.style.maxWidth = "230px"; // Adjust this to customize the max width.
-tooltip.class = "tooltip is-top is-right"
-tooltip.role = "tooltip"
-
-document.body.appendChild(tooltip);
-
-// Show the tooltip and make it follow the mouse
-
-window.tooltip_on = function(html) {
-    if (tooltip_dict[html] != null) {
-        tooltip.innerHTML = tooltip_dict[html];
-    }
-    tooltip.style.visibility = "visible";
-    document.onmousemove = (event) => {
-        tooltip.style.left = `${event.pageX + 10}px`; // Use this and the line below to
-        tooltip.style.top = `${event.pageY + 10}px`; // adjust the relative position of the tooltip.
-    };
-};
-
-
-window.tooltip_off = function() {
-    tooltip.style.visibility = "hidden";
-    document.onmousemove = null; // Stop tracking the mouse
-};
-
-
-
 
 
 
