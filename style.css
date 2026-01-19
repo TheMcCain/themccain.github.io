@@ -39,7 +39,15 @@ body {
 .title-bar {
   cursor: move;
 }
+.window {
+  max-width: 300px;
+}
 
+.window-body {
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 8px;
+}
 // Tabs
 
 [role="tabpanel"] {
