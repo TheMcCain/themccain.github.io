@@ -90,60 +90,6 @@ tabs.forEach(tab => {
 
 
 
-// SCROLLBAR
-(function () {
-    const hasPageScrollbar = document.documentElement.scrollHeight > document.documentElement.clientHeight;
-    document.body.classList.toggle('has-scrollbar', hasPageScrollbar);
-}
-)();
-
-function ensureStylesheet(url, id) {
-	if (id && document.getElementById(id)) {
-        if (id === 'unpkg-7css') {
-            const link = document.getElementById(id);
-if (link) link.remove();
-            return; 
-        }
-        return;
-    }
-	if (document.querySelector('link[rel="stylesheet"][href="' + url + '"]')) return;
-const link = document.createElement('link');
-	link.rel = 'stylesheet';
-	link.href = url;
-	if (id) link.id = id;
-	document.head.appendChild(link);
-}
-
-function ensureMetaViewport() {
-    if (!document.querySelector('meta[name="viewport"]')) {
-        const m = document.createElement('meta');
-m.name = 'viewport';
-        m.content = 'width=device-width, initial-scale=1';
-        document.head.appendChild(m);
-    }
-}
-
-applyGlobalStyles.sheets = {};
-function applyGlobalStyles(css, id = 'app-theme') {
-    if ('adoptedStyleSheets' in document && 'replaceSync' in CSSStyleSheet.prototype) {
-        if (!applyGlobalStyles.sheets[id]) {
-            applyGlobalStyles.sheets[id] = new CSSStyleSheet();
-document.adoptedStyleSheets = [...document.adoptedStyleSheets, applyGlobalStyles.sheets[id]];
-        }
-        applyGlobalStyles.sheets[id].replaceSync(css);
-        return;
-}
-
-    let el = document.getElementById(id);
-    if (!el) {
-        el = document.createElement('style');
-el.id = id;
-        document.head.appendChild(el);
-    }
-    el.textContent = css;
-}
-
-
 
 
 
