@@ -25,3 +25,15 @@ html, body {
   font-family: "Segoe UI", system-ui, sans-serif;
   background-color: #000;
 }
+
+.window {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  cursor: default;
+}
+
+.title-bar {
+  cursor: move;
+}
+
