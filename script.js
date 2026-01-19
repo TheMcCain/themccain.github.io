@@ -105,4 +105,9 @@ closeBtn.addEventListener("click", () => {
   myWindow.style.display = "none"; // hides the window
 });
 
+// other stuff
+document.title = "REAL MCCAIN PATRIOTS OVER HERE";
+<link rel="icon" type="image/png" sizes="48x48" href="https://www.rw-designer.com/icon-image/18838-256x256x32.png">
+
+
 
