@@ -73,37 +73,37 @@ a:hover {
 
 // tooltips
 
+.tooltip-trigger {
+  display: inline-block;    /* Can be changed to block if needed */
+  margin: 0;                /* Remove default margin */
+  padding: 0;               /* Remove default padding */
+  position: relative;       /* Needed for tooltip positioning */
+  cursor: help;
+  text-decoration: underline; /* Underline the trigger text */
+}
+
+/* Tooltip styling */
 .tooltip {
-  position: absolute;      /* Make it float above content */
-  bottom: 100%;            /* Position above the trigger */
+  position: absolute;
+  bottom: 120%;             /* Above the trigger */
   left: 50%;
-  transform: translateX(-50%) translateY(-10px); /* Center + slight upward offset */
-  background-color: #333;
-  color: #fff;
-  padding: 8px 12px;
+  transform: translateX(-50%) translateY(-10px);
+  color: #000;
+  padding: 6px 10px;
   border-radius: 4px;
   font-size: 14px;
   white-space: nowrap;
-  
-  opacity: 0;              /* Start hidden */
-  pointer-events: none;    /* Ignore mouse events when hidden */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade + slight move */
-  
-  z-index: 10;
-}
 
-.tooltip-trigger {
-  position: relative;      /* Needed for tooltip positioning */
-  cursor: help;
-  text-decoration: underline
+  opacity: 0;               /* Initially hidden */
+  pointer-events: none;     /* Ignore mouse events */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
 }
 
 /* Show tooltip on hover */
 .tooltip-trigger:hover .tooltip {
   opacity: 1;
-  transform: translateX(-50%) translateY(0); /* Slide slightly down into place */
+  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
-
-
 
