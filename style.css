@@ -74,28 +74,32 @@ a:hover {
 // tooltips
 
 .tooltip-trigger {
-  display: inline-block;    /* Can be changed to block if needed */
-  margin: 0;                /* Remove default margin */
-  padding: 0;               /* Remove default padding */
-  position: relative;       /* Needed for tooltip positioning */
+  display: inline-block;             /* inline allows underline */
   cursor: help;
-  text-decoration: underline; /* Underline the trigger text */
+  text-decoration: underline;  /* underline text */
+  text-decoration-thickness: 1px; /* optional, thickness */
+  position: relative;           /* needed for tooltip */
+  padding: 0 4px;   /* ← this creates visible space */
+
+}
+.tooltip-trigger {
+  text-decoration-line: underline !important;
 }
 
 /* Tooltip styling */
 .tooltip {
   position: absolute;
-  bottom: 120%;             /* Above the trigger */
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  top: 235%;               /* Slightly below the text */
+  left: 60%;               /* Center horizontally */
+  transform: translateX(-50%); /* Center tooltip */
   color: #000;
   padding: 6px 10px;
   border-radius: 4px;
   font-size: 14px;
   white-space: nowrap;
 
-  opacity: 0;               /* Initially hidden */
-  pointer-events: none;     /* Ignore mouse events */
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 10;
 }
