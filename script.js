@@ -89,6 +89,53 @@ tabs.forEach(tab => {
 
 
 
+// TOOLTIPS
+
+const tooltips = document.querySelectorAll('.mytooltip');
+
+tooltips.forEach(el => {
+    const tooltip = el.querySelector('.mytooltiptext');
+    
+    el.addEventListener('mouseenter', () => {
+        tooltip.style.opacity = '1';
+        
+        const rect = tooltip.getBoundingClientRect();
+        const offset = 10; // small padding from edge
+        
+        // Right edge
+        if (rect.right > window.innerWidth) {
+            tooltip.style.left = `calc(100% - ${rect.width + offset}px)`;
+            tooltip.style.transform = 'none';
+        }
+        // Left edge
+        if (rect.left < 0) {
+            tooltip.style.left = `${offset}px`;
+            tooltip.style.transform = 'none';
+        }
+        // Top edge
+        if (rect.top < 0) {
+            tooltip.style.bottom = 'auto';
+            tooltip.style.top = '125%';
+        }
+        // Bottom edge
+        if (rect.bottom > window.innerHeight) {
+            tooltip.style.bottom = '125%';
+            tooltip.style.top = 'auto';
+        }
+    });
+
+    el.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.bottom = '125%';
+        tooltip.style.top = 'auto';
+    });
+});
+
+
+
+
 
 
 
