@@ -62,15 +62,6 @@ body {
 
 // links
 
-a:link, a:visited {
-  color: #fff !important;
-  transition: color 0.4s ease;
-}
-
-a:hover {
-  color: #fff !important;
-}
-
  .mytooltip {
             position: relative;
             display: inline-block;
