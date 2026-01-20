@@ -62,7 +62,7 @@ body {
 
 // links
 
-a {
+a:link, a:visited {
   color: white;
   transition: color 0.3s ease;
 }
