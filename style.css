@@ -79,27 +79,28 @@ a:hover {
             text-decoration: underline;
         }
 
-        .mytooltip .mytooltiptext {
-            width: 150px;
-            background: rgba(7, 119, 220, 0.9); /* lightblue with 10% opacity */
-            color: white;
-            text-align: center;
-            border-radius: 6px;
-            padding: 10px;
-            position: absolute;
-            z-index: 99; 
-            bottom: 50%; 
-            left: 20%;
-            margin-left: -90px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border: 1px solid white;
-            pointer-events: none;
-            font-size: 13px !important;
-            line-height: 1.5em !important;
-            font-weight: normal !important;
-            font-style: normal !important;
-        }
+      .mytooltip .mytooltiptext {
+    width: 150px;
+    background: rgba(7, 119, 220, 0.9); /* blue, 90% opacity*/
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 99;
+    bottom: 125%; /* show above the element */
+    left: 50%;
+    transform: translateX(-50%); /* center horizontally */
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 1px solid white;
+    pointer-events: none;
+    font-size: 13px !important;
+    line-height: 1.5em !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
 
         .mytooltip .mytooltiptext img {
             max-width: 150px;
