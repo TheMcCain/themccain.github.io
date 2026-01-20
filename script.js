@@ -98,7 +98,7 @@ tabs.forEach(tab => {
 
 
 // other stuff
-document.title = "REAL MCCAIN PATRIOTS WEBSITE";
+document.title = "REAL PATRIOTS WEBSITE";
 
 document.querySelectorAll("link[rel*='icon']").forEach(el => el.remove());
 
