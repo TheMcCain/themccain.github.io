@@ -80,7 +80,7 @@ a:hover {
 
       .mytooltip .mytooltiptext {
     width: 150px;
-    background: rgba(7, 119, 220, 0.9); /* blue, 90% opacity*/
+    background: rgba(0, 0, 0, 0.7); /* black, 70% opacity*/
     color: white;
     text-align: center;
     border-radius: 6px;
