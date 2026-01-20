@@ -94,8 +94,8 @@ a:hover {
 /* Tooltip styling */
 .tooltip {
   position: absolute;
-  top: 235%;               /* Slightly below the text */
-  left: 60%;               /* Center horizontally */
+  top: 220%;               /* Slightly below the text */
+  margin-right: 12px important;
   transform: translateX(-50%); /* Center tooltip */
   color: #000;
   padding: 6px 10px;
