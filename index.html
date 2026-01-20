@@ -190,21 +190,22 @@ closeBtn.addEventListener("click", () => {
 </script>
 
   <!-- TOOLTIPS -->
-  <script>
+<script>
   // Create the tooltip element dynamically
   const tooltip = document.createElement("div");
-  tooltip.setAttribute("role", "tooltip"); // Keep the semantic role for accessibility
+  tooltip.setAttribute("role", "tooltip");
+  tooltip.classList.add("tooltip"); // <-- Add the class your CSS expects
   document.body.appendChild(tooltip);
 
-  // Show the tooltip
+  // Show tooltip
   function showTooltip(text, event) {
-    tooltip.innerHTML = text;           // Insert the content from data-tooltip
+    tooltip.innerHTML = text;
     tooltip.style.visibility = "visible";
     tooltip.style.left = `${event.pageX + 10}px`;
     tooltip.style.top = `${event.pageY + 10}px`;
   }
 
-  // Hide the tooltip
+  // Hide tooltip
   function hideTooltip() {
     tooltip.style.visibility = "hidden";
   }
