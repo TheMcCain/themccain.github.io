@@ -6,40 +6,6 @@
   <a href="about.html">Contact</a>
 </nav>
 
-    <!-- TOOLTIPS -->
-<script>// Create the tooltip element
-const tooltip = document.createElement("div");
-tooltip.setAttribute("id", "tt");
-tooltip.style.position = "absolute";
-tooltip.style.padding = "8px";
-tooltip.style.visibility = "hidden";
-tooltip.style.fontSize = "14px";
-tooltip.style.zIndex = "1000";
-tooltip.style.whiteSpace = "normal";
-tooltip.style.wordWrap = "break-word";
-tooltip.style.maxWidth = "230px";
-tooltip.className = "tooltip is-top is-right"; // Use className, not class
-tooltip.setAttribute("role", "tooltip");
-
-document.body.appendChild(tooltip);
-
-// Show the tooltip with text directly
-window.tooltip_on = function(text) {
-    tooltip.innerHTML = text; // Directly set the HTML content
-    tooltip.style.visibility = "visible";
-    document.onmousemove = (event) => {
-        tooltip.style.left = `${event.pageX + 10}px`;
-        tooltip.style.top = `${event.pageY + 10}px`;
-    };
-};
-
-// Hide the tooltip
-window.tooltip_off = function() {
-    tooltip.style.visibility = "hidden";
-    document.onmousemove = null;
-};
-</script>
-  
 
 <br>
 
@@ -66,7 +32,7 @@ window.tooltip_off = function() {
   </div>
     <div>
     <input type="checkbox" id="example5">
-    <label for="example5">Are <span data-tooltip="Basically HRC if she wasn't attractive." style="text-decoration: underline; cursor: pointer;">Gillibrand</span> and Schumer bad senators?</label>
+    <label for="example5">Are <span data-tooltip="A balloon is better known as tooltip in web development." style="text-decoration: underline; cursor: pointer;">word</span> and Schumer bad senators?</label>
   </div>
 </div>
 
@@ -223,6 +189,36 @@ closeBtn.addEventListener("click", () => {
 });
 </script>
 
+  <!-- TOOLTIPS -->
+  <script>
+  // Create the tooltip element dynamically
+  const tooltip = document.createElement("div");
+  tooltip.setAttribute("role", "tooltip"); // Keep the semantic role for accessibility
+  document.body.appendChild(tooltip);
+
+  // Show the tooltip
+  function showTooltip(text, event) {
+    tooltip.innerHTML = text;           // Insert the content from data-tooltip
+    tooltip.style.visibility = "visible";
+    tooltip.style.left = `${event.pageX + 10}px`;
+    tooltip.style.top = `${event.pageY + 10}px`;
+  }
+
+  // Hide the tooltip
+  function hideTooltip() {
+    tooltip.style.visibility = "hidden";
+  }
+
+  // Attach tooltip behavior to all elements with data-tooltip
+  document.querySelectorAll("[data-tooltip]").forEach(el => {
+    el.addEventListener("mouseenter", (e) => showTooltip(el.dataset.tooltip, e));
+    el.addEventListener("mousemove", (e) => {
+      tooltip.style.left = `${e.pageX + 10}px`;
+      tooltip.style.top = `${e.pageY + 10}px`;
+    });
+    el.addEventListener("mouseleave", hideTooltip);
+  });
+</script>
   
 <link rel="stylesheet" href="https://unpkg.com/7.css">
 <link rel="stylesheet" href="style.css">
