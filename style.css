@@ -72,6 +72,10 @@ a:hover {
   color: #3399FF !important;
 }
 
+.nav {
+  background: white;
+}
+
  .mytooltip {
             position: relative;
             display: inline-block;
