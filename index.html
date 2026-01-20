@@ -6,6 +6,41 @@
   <a href="about.html">Contact</a>
 </nav>
 
+    <!-- TOOLTIPS -->
+<script>// Create the tooltip element
+const tooltip = document.createElement("div");
+tooltip.setAttribute("id", "tt");
+tooltip.style.position = "absolute";
+tooltip.style.padding = "8px";
+tooltip.style.visibility = "hidden";
+tooltip.style.fontSize = "14px";
+tooltip.style.zIndex = "1000";
+tooltip.style.whiteSpace = "normal";
+tooltip.style.wordWrap = "break-word";
+tooltip.style.maxWidth = "230px";
+tooltip.className = "tooltip is-top is-right"; // Use className, not class
+tooltip.setAttribute("role", "tooltip");
+
+document.body.appendChild(tooltip);
+
+// Show the tooltip with text directly
+window.tooltip_on = function(text) {
+    tooltip.innerHTML = text; // Directly set the HTML content
+    tooltip.style.visibility = "visible";
+    document.onmousemove = (event) => {
+        tooltip.style.left = `${event.pageX + 10}px`;
+        tooltip.style.top = `${event.pageY + 10}px`;
+    };
+};
+
+// Hide the tooltip
+window.tooltip_off = function() {
+    tooltip.style.visibility = "hidden";
+    document.onmousemove = null;
+};
+</script>
+  
+
 <br>
 
 <h1><u>TheMcCain ALERT: THEY WANT TO SENTENCE ME TO DEATH!!!!</h1></u>
@@ -31,7 +66,7 @@
   </div>
     <div>
     <input type="checkbox" id="example5">
-    <label for="example5">Are<span class="tooltip-trigger">Kirsten Gillibrand<div class="tooltip" role="tooltip">HRC if she wasn't attractive.</div></span>and <span class="tooltip-trigger">Chuck Schumer<div class="tooltip" role="tooltip"><i>WILL</i> get primaried by AOC in '28.</div></span> bad senators?</label>
+    <label for="example5">Are <span data-tooltip="Basically HRC if she wasn't attractive." style="text-decoration: underline; cursor: pointer;">Gillibrand</span> and Schumer bad senators?</label>
   </div>
 </div>
 
