@@ -72,10 +72,6 @@ a:hover {
   color: #3399FF !important;
 }
 
-.nav {
-  background: white;
-}
-
  .mytooltip {
             position: relative;
             display: inline-block;
@@ -115,3 +111,15 @@ a:hover {
             opacity: 1;
             transition-delay: 0.5s;
         }
+
+
+/* Misc. */
+.topnav {
+  background: white;
+}
+	blockquote {
+				border-left: 4px solid #07076c;
+				font-style: italic;
+				margin: 1em;
+				padding: 0 1em;
+			}
