@@ -64,9 +64,9 @@ body {
 
 a:link, a:visited {
   color: #0000FF;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease;
 }
 
 a:hover {
-  color: #2222f5;
+  color: #004cff;
 }
