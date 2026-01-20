@@ -75,13 +75,13 @@ a:hover {
             position: relative;
             display: inline-block;
             cursor: pointer;
-            background-color: lightblue;
+            text-decoration: underline;
         }
 
         .mytooltip .mytooltiptext {
             width: 150px;
-            background-color: lightblue;
-            color: black;
+            background: rgba(173, 216, 230, 0.6); /* lightblue with 10% opacity */
+            color: white;
             text-align: center;
             border-radius: 6px;
             padding: 10px;
@@ -92,7 +92,7 @@ a:hover {
             margin-left: -90px;
             opacity: 0;
             transition: opacity 0.3s;
-            border: 1px solid black;
+            border: 1px solid white;
             pointer-events: none;
             font-size: 13px !important;
             line-height: 1.5em !important;
