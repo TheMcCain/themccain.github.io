@@ -1,3 +1,4 @@
+
 body {
   background-image: url("images/Background.jpg");
   background-size: cover;
@@ -62,6 +63,15 @@ body {
 
 // links
 
+a:link, a:visited {
+  color: #fff !important;
+  transition: color 0.4s ease !important;
+}
+
+a:hover {
+  color: #3399FF !important;
+}
+
  .mytooltip {
             position: relative;
             display: inline-block;
@@ -71,8 +81,8 @@ body {
 
         .mytooltip .mytooltiptext {
             width: 150px;
-            background: rgba(173, 216, 230, 0.9); /* lightblue with 10% opacity */
-            color: black;
+            background: rgba(7, 119, 220, 0.9); /* lightblue with 10% opacity */
+            color: white;
             text-align: center;
             border-radius: 6px;
             padding: 10px;
@@ -83,7 +93,7 @@ body {
             margin-left: -90px;
             opacity: 0;
             transition: opacity 0.3s;
-            border: 1px solid black;
+            border: 1px solid white;
             pointer-events: none;
             font-size: 13px !important;
             line-height: 1.5em !important;
