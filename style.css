@@ -85,6 +85,9 @@ a:hover {
 .tooltip-trigger {
   text-decoration-line: underline !important;
 }
+.tooltip-trigger {
+  padding: 0 2px !important;
+}
 
 /* Tooltip styling */
 .tooltip {
@@ -100,7 +103,7 @@ a:hover {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 10;
 }
 
