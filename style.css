@@ -80,13 +80,15 @@ a:hover {
   text-decoration-thickness: 1px; /* optional, thickness */
   position: relative;           /* needed for tooltip */
   padding: 0 4px;   /* ← this creates visible space */
-
 }
 .tooltip-trigger {
   text-decoration-line: underline !important;
 }
 .tooltip-trigger {
   padding: 0 2px !important;
+}
+.tooltip-trigger:hover {
+  cursor: pointer; /* Changes to a hand icon */
 }
 
 /* Tooltip styling */
